@@ -1,8 +1,8 @@
-// contiene i prototipi delle funzioni descritte in "documentazione.h"#include <stdio.h>
+// contiene i prototipi delle funzioni descritte in "doc.h"
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include "lib.h"
+#include "doc.h"
 
 void initArray(int v[], int dim){
     for(int i=0; i<dim; i++ ){
@@ -20,9 +20,19 @@ void fill_array(int v[], int dim){
     }
 }
 
-
 void random_fill_array(int v[], int dim){
     for(int i=0; i<dim; i++){
         v[i] = 1 + (rand() % 99);
     }
 }
+
+void print_matrix(int rows, int cols, int matrix[rows][cols]){
+
+    for(int i=0; i<rows; i++){
+        for(int j=0; j<cols; j++){    
+           printf("%3d ", matrix[i][j]);  
+        }
+        printf("\n");
+    }
+}
+
