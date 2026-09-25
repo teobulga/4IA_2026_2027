@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include<stdbool.h>
 #include "doc.h"
 #include "prototipi.c"
 
@@ -10,13 +11,19 @@
 
 int main(void){
 
-    int matrice[DIM][DIM] = { // braket init
-        {0,1,2}, // r0 c0,1,2
-        {10,11,12},
-        {20,21,22},
+    int user_input;
+
+    int quadratic_matrix[DIM][DIM] = {
+        {2, 5, 8},
+        {4, 5, 7},
+        {4, 5, 8},
     };
-    printf("42 \n\n");
-    print_matrix(DIM,DIM,matrice);
+
+
+
+
+
+
 
 
     return 0;

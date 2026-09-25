@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include<stdbool.h>
 #include "doc.h"
 
 void initArray(int v[], int dim){
@@ -26,13 +27,36 @@ void random_fill_array(int v[], int dim){
     }
 }
 
-void print_matrix(int rows, int cols, int matrix[rows][cols]){
-
-    for(int i=0; i<rows; i++){
-        for(int j=0; j<cols; j++){    
-           printf("%3d ", matrix[i][j]);  
+void print_matrix(int rows, int cols, int m[rows][cols]) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+        	if (j == 0)
+        		printf("[");
+            printf("%3d ", m[i][j]);
+        	if (j == cols - 1)
+        		printf("]");
         }
         printf("\n");
     }
 }
+
+void quadratic_matrix_scalare(int input_filler,int rows, int cols, int m[rows][cols]){
+
+    m[rows][cols] = 0;
+
+        for(int i=0; i<rows; i++){
+            for(int j=0; j<cols; j++){
+                m[i][j] =0 ;
+                if(i == j) {
+                    m[i][j] = input_filler;
+                }
+
+            printf("%3d ", m[i][j]);  
+        }
+        printf("\n");
+    }
+
+}
+
+bool quad_matrix_simmetry()
 
