@@ -1,0 +1,115 @@
+// contiene i prototipi delle funzioni descritte in "doc.h"
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include "teolib.h"
+
+// --------- ARRAY ---------
+
+void tl_array_init(int v[], int dim)
+{
+    for (int i = 0; i < dim; i++)
+    {
+        v[i] = 0;
+    }
+}
+
+
+void tl_array_fill_rnd(int v[], int dim)
+{
+    for (int i = 0; i < dim; i++)
+    {
+        v[i] = 1 + (rand() % 99);
+    }
+}
+
+void tl_array_fill_rnd_range(int v[], int dim, int min, int max)
+{
+    srand(time(NULL));
+    for (int i = 0; i < dim; i++)
+    {
+        v[i] = min + (rand() % (max - min + 1));
+    }
+}
+
+void tl_array_print(int v[], int dim)
+{
+    for (int i = 0; i < dim; i++)
+    {
+        printf("%d ", v[i]);
+    }
+}
+
+float tl_array_average(int v[], int dim)
+{
+    int sum = 0;
+    for (int i = 0; i < dim; i++)
+    {
+        sum += v[i];
+    }
+    return (sum / dim);
+}
+
+// --------- MATRICI ---------
+
+void tl_mat_fill_rnd(int dim, int m[dim][dim], int rnd_min, int rnd_max)
+{
+    srand(time(NULL));
+    for (int i = 0; i < dim; i++)
+    {
+        for (int j = 0; j < dim; j++)
+        {
+            m[i][j] = rnd_min + (rand() % (rnd_max - rnd_min + 1));
+        }
+    }
+}
+
+void tl_mat_print(int rows, int cols, int m[rows][cols])
+{
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            if (j == 0)
+                printf("[");
+            printf("%3d ", m[i][j]);
+            if (j == cols - 1)
+                printf("]");
+        }
+        printf("\n");
+    }
+}
+
+void tl_square_mat_scalar(int input_filler, int dim, int m[dim][dim])
+{
+    for (int i = 0; i < dim; i++)
+    {
+        for (int j = 0; j < dim; j++)
+        {
+            if (i == j)
+            {
+                m[i][j] = input_filler; // Diagonale
+            }
+            else
+            {
+                m[i][j] = 0; // Altri elementi
+            }
+        }
+    }
+}
+
+bool tl_square_mat_symmetry(int lato, int m[lato][lato])
+{
+    for (int i = 0; i < lato; i++)
+    {
+        for (int j = i + 1; j < lato; j++)
+        { // +1 per saltare il caso 0 0
+            if (m[i][j] != m[j][i])
+            {
+                return false; // fail fast
+            }
+        }
+    }
+    return true;
+}
