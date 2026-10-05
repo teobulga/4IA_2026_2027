@@ -1,11 +1,11 @@
 // Per casa, con le consuete modalità:
 // maxSumM(): ritorna il valore massimo degli elementi di una matrice di interi e la somma dei suoi elementi
 
-// gcc -Wall -Wextra 07_max_v_M.c teolib.c && ./a.out
+// gcc -Wall -Wextra 07_max_v_M.c _teolib.c && ./a.out
 
 #include <stdio.h>
 #include <stdbool.h>
-#include "teolib/teolib.h"
+#include "_teolib.h"
 
 #define DIM 5
 

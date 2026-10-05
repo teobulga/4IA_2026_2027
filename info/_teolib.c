@@ -3,7 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "teolib.h"
+#include "_teolib.h"
 
 // --------- ARRAY ---------
 
@@ -14,7 +14,6 @@ void tl_array_init(int v[], int dim)
         v[i] = 0;
     }
 }
-
 
 void tl_array_fill_rnd(int v[], int dim)
 {
