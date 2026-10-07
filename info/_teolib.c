@@ -50,6 +50,34 @@ float tl_array_average(int v[], int dim)
     return (sum / dim);
 }
 
+void tl_array_sort_mode(int v[], int dim, int mode){
+    int tmp;
+
+    if(mode == 0){ // ordinamente crescende dell array
+        for(int i= 0; i<dim; i++){
+            for(int j= i; j<dim; j++){
+                if(v[j] > v[i]){
+                    tmp = v[i];
+                    v[i] = v[j];
+                    v[j] = tmp;
+                }
+            }
+        }
+    }
+
+     if(mode == 1){ // ordinamente decrescente dell array
+        for(int i= 0; i<dim; i++){
+            for(int j= i; j<dim; j++){
+                if(v[j] < v[i]){
+                    tmp = v[i];
+                    v[i] = v[j];
+                    v[j] = tmp;
+                }
+            }
+        }
+    }
+}
+
 // --------- MATRICI ---------
 
 void tl_mat_fill_rnd(int dim, int m[dim][dim], int rnd_min, int rnd_max)

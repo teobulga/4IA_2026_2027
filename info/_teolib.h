@@ -36,6 +36,14 @@ void tl_array_print(int v[], int dim);
  */
 float tl_array_average(int v[], int dim);
 
+/**ordina un vettore in modo crescente o decrescente a seconda dell utente
+ *@param int* riferimento al vettore
+ *@param int dim dimensione del vettore
+ *@param int modi di ordinamento
+ */
+void tl_array_sort_mode(int v[], int dim, int mode);
+
+
 // --------- MATRICI ---------
 
 /**popolamento random di una matrice con valori compresi tra min e max
