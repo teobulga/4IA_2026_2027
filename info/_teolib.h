@@ -75,4 +75,35 @@ void tl_square_mat_scalar(int input_filler, int dim, int m[dim][dim]);
  */
 bool tl_square_mat_symmetry(int lato, int m[lato][lato]);
 
+/**data una matrice ne calcola la media degli elemtei
+ *@param int righe della matrice
+ *@param int colonne della matrice
+ *@param int[][] matrice da stampare
+ */
+float tl_mat_media(int rows, int cols, int m[rows][cols]);
+
+/**funzione che data una matrice calcola la somma degli elementi sulle righe
+ *@param int righe della matrice
+ *@param int colonne della matrice
+ *@param int[][] matrice da stampare
+ 
+ */
+void tl_mat_sum_rows(int rows, int cols, int m[rows][cols]);
+
+/**funzione che data una matrice calcola la Somma totale del triangolo inferiore e del triangolo superiore e della dfiagonale.
+ *@param int righe della matrice
+ *@param int colonne della matrice
+ *@param int[][] matrice da stampare
+ */
+void tl_mat_trian_up_down_sum(int rows, int cols, int m[rows][cols]);
+
+
+
+
+
+
+
+
+
+
 #endif /* __TEOLIB_H__ */

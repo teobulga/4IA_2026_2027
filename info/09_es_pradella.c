@@ -11,6 +11,7 @@
 #include <stdbool.h>
 #include "_teolib.h"
 
+/*
 // f1
 float tl_mat_media(int rows, int cols, int m[rows][cols]){
     int sum = 0;
@@ -60,6 +61,7 @@ void tl_mat_trian_up_down_sum(int rows, int cols, int m[rows][cols]){
     }
     printf("somma triangolo superiore : %d\nsomma triangolo inferiore : %d\nsomma diagonale : %d\n", somma_up_t, somma_down_t,somma_diag_t );
 }
+*/
 
 
 

@@ -127,6 +127,7 @@ void tl_square_mat_scalar(int input_filler, int dim, int m[dim][dim])
 }
 
 bool tl_square_mat_symmetry(int lato, int m[lato][lato])
+
 {
     for (int i = 0; i < lato; i++)
     {
@@ -139,4 +140,52 @@ bool tl_square_mat_symmetry(int lato, int m[lato][lato])
         }
     }
     return true;
+}
+
+float tl_mat_media(int rows, int cols, int m[rows][cols]){
+    int sum = 0;
+    for(int i=0; i<rows; i++){
+        for(int j=0; j<cols; j++){
+            sum += m[i][j];
+        }
+    }
+    return (sum/(rows*cols));
+}
+
+void tl_mat_sum_rows(int rows, int cols, int m[rows][cols]){
+    int sum_righe;
+    for(int i=0; i<rows; i++){
+        sum_righe = 0;
+        for(int j=0; j<cols; j++){
+           printf("%3d", m[i][j]);
+           sum_righe += m[i][j];
+        }
+        printf("  -> %3d", sum_righe);
+        printf("\n");
+    }
+
+}
+
+void tl_mat_trian_up_down_sum(int rows, int cols, int m[rows][cols]){
+    int somma_down_t = 0;
+    int somma_up_t =0;
+    int somma_diag_t =0;
+
+    for(int i=0; i<rows; i++){
+        for(int j=0; j<cols; j++){
+
+            if(j>i){ // top half
+                somma_up_t += m[i][j];
+            }
+
+            if(i>j){ // bottom half
+                somma_down_t += m[i][j];
+            }
+
+            if(j==i){ // diagonal
+                somma_diag_t += m[i][j];
+            }
+        }
+    }
+    printf("somma triangolo superiore : %d\nsomma triangolo inferiore : %d\nsomma diagonale : %d\n", somma_up_t, somma_down_t,somma_diag_t );
 }
