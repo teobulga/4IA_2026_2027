@@ -6,14 +6,14 @@
     una riga della matrice.
 */
 
-// gcc 09_es_gesu.c _teolib.c -o 09_es_gesu && ./09_es_gesu
+// gcc 09_es_verifica_riga_presente.c _teolib.c -o 09_es_verifica_riga_presente && ./09_es_verifica_riga_presente
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include "_teolib.h"
 
-bool gesu(int rows, int cols, int m[rows][cols], int v[cols]){
+bool verifica_riga_presente(int rows, int cols, int m[rows][cols], int v[cols]){
 
     int diff_cnt =0;
 
