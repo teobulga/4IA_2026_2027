@@ -25,33 +25,38 @@
 #include <stdbool.h>
 #include "_teolib.h"
 
-int main(void){
-    int dim = 5;
+#define DIM 5
 
-    int codice_segreto[dim];
-    int codice_utente[dim];
+int main(void){
+
+    int codice_segreto[DIM];
+    int codice_utente[DIM];
 
     int rnd_max = 9;
     int rnd_min = 0;
 
     int guess_cnt = 0;
 
-    tl_array_fill_rnd_range(codice_segreto, dim, rnd_min, rnd_max);
+    tl_array_fill_rnd_range(codice_segreto, DIM, rnd_min, rnd_max);
+
+    // debug
+    tl_array_print(codice_segreto,DIM);
 
     do{
         printf("\n");
         printf("----GUESS THE PIN----\n\n");
         printf("inserici 5 numeri interi compresi tra 0 e 9, e prova d indovinare il pin\n");
 
-        for(int i = 0; i<dim; i++){
+        // fill codice utente
+        for(int i = 0; i<DIM; i++){
             scanf("%d", &codice_utente[i]);
         }
+        guess_cnt++;
 
 
-        for(int j=0; j<dim; j++){
+        for(int j=0; j<DIM; j++){
             if(codice_utente[j] == codice_segreto[j]){
                 printf("%d", codice_utente[j]);
-                guess_cnt++;
             }else{
                 printf("?");   
             }
@@ -59,22 +64,10 @@ int main(void){
         printf("\n");
 
 
+    }while(guess_cnt<DIM);
 
-        /*
-                for(int j=0; j<dim; j++){
-            for(int k=0; k<dim; k++){
-                if (codice_utente[j] == codice_segreto[k]){
-                    printf("%d", codice_utente[j]);
-                    guess_cnt++;
-                }else{
-                    printf("_"); // stampa 25 volte causa doppio ciclo dim*dim
-                }
-            }
-        }
-        */
-
-
-    }while(guess_cnt<dim);
+    printf("hai vinto!!\n");
+    printf("hai impiegato %d\n", guess_cnt);
 
 
     return 0;
