@@ -99,6 +99,24 @@ void tl_mat_trian_up_down_sum(int rows, int cols, int m[rows][cols]);
 
 
 
+// --------- STRINGHE ---------
+
+/**FUNZIONE CHE INIZIALIZZA UNA STRINGA A '/0'
+ *@param int dimensione della stringa
+ *@param char stringa da valurtare 
+ */
+void tl_str_init(int dim, char str[dim]);
+
+
+/**calcola la lungezza di una stringa data 
+ *@param int dimensione della stringa
+ *@param char stringa da valurtare
+ *@return lunghezza effettiva 
+ */
+int tl_str_lenght(int dim, char str[dim]);
+
+
+
 
 
 

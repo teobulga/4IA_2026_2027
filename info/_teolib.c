@@ -189,3 +189,27 @@ void tl_mat_trian_up_down_sum(int rows, int cols, int m[rows][cols]){
     }
     printf("somma triangolo superiore : %d\nsomma triangolo inferiore : %d\nsomma diagonale : %d\n", somma_up_t, somma_down_t,somma_diag_t );
 }
+
+
+
+// --------- STRINGHE ---------
+
+void tl_str_init(int dim, char str[dim]){
+    
+    for(int i=0; i<dim; i++){
+        str[i] = '/0';
+    }
+}
+
+int tl_str_lenght(int dim, char str[dim]){
+
+    int len = 0;
+    while(str[len] != '/0'){
+        len ++;
+    }
+    return len;
+}
+
+
+
+
