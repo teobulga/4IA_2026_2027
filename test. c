@@ -1,0 +1,18 @@
+Per la prossima lezione di informatica (giovedì) completare e consegnare
+bool repeatedChars(char s[]): dice se una stringa ha dei caratteri ripetuti; // "carlo" --> no, "carla" --> si
+
+#include <stdio.h>
+#include <stdbool.h>
+#define ST '\0'
+
+bool repeatedChars(char *s){
+    int i, j;
+    for (i = 0; s[i] != ST; i++){
+        for (j = i + 1; s[j] != ST; j++){
+            if (s[i] == s[j]){
+                return true;
+            }
+        }
+    }
+    return false;
+}
