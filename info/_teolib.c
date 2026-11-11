@@ -309,3 +309,36 @@ int tl_str_find_substr(const char* s, const char* subStr) {
 
     return -1;
 }
+
+void tl_str_print_flip(const char *s){
+
+   int len_str = tl_str_len(s);
+    for (int i = len_str -1 ; i > 0; i--) {
+        printf("%c", s[i]);
+    }
+}
+
+int tl_str_char_cnt(const char *s, char nidle){
+    int len = tl_str_len(s);
+    int nidle_cnt = 0;
+
+    for(int i=0; i<len; i++){
+        if(s[i] == nidle){
+            nidle_cnt++;
+        }
+    }
+    return nidle_cnt;
+}
+
+void contaInteroAlfabeto(char _str[]){
+    int i;      // contatore per passare le 26 lettere dell'alfabeto
+    char src;   // lettera da contare
+
+    src = 'a';
+    for(i=0; i<26; i++){
+        printf("%c -> %2d ", (src+i), contaCarattere(_str,(src+i)));
+        if((i+1)%13 == 0)
+            printf("\n");
+    }
+}
+
